@@ -33,7 +33,7 @@ function App() {
           <Link to="/login">Login</Link>
         ) : (
           <>
-            <Link to="/createpost">Create a Post</Link>
+            <Link to="/createpost">Post vent</Link>
             <button onClick={signUserOut}>Log Out</button>
           </>
         )}
