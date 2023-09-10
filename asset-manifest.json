@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/epl-blog/static/css/main.36ca3f2c.css",
+    "main.js": "/epl-blog/static/js/main.73acf227.js",
+    "static/js/787.04fdcc49.chunk.js": "/epl-blog/static/js/787.04fdcc49.chunk.js",
+    "index.html": "/epl-blog/index.html",
+    "main.36ca3f2c.css.map": "/epl-blog/static/css/main.36ca3f2c.css.map",
+    "main.73acf227.js.map": "/epl-blog/static/js/main.73acf227.js.map",
+    "787.04fdcc49.chunk.js.map": "/epl-blog/static/js/787.04fdcc49.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.36ca3f2c.css",
+    "static/js/main.73acf227.js"
+  ]
+}
