@@ -22,7 +22,7 @@ function App() {
   return (
     <Router>
       <Helmet>
-        <meta charSet="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" charSet="utf-8" />
         <title>Vent</title>
         <link rel="canonical" href="http://mysite.com/example" />
       </Helmet>
