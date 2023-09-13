@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "./firebase";
 import { useNavigate } from "react-router-dom";
+import { Form, Button, Card, Container } from "react-bootstrap";
 
 export default function CreatePost({ isAuth }) {
   const [title, setTitle] = useState("");
@@ -22,34 +23,40 @@ export default function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate("/login");
     }
-  }, []);
+  }, [isAuth, navigate]);
   return (
-    <div className="createPostPage">
-      <div className="cpContainer">
-        <h1>Create A Post</h1>
-        <div className="inputGp">
-          <label>Title:</label>
-          <input
-            placeholder="Title..."
-            onChange={(event) => {
-              setTitle(event.target.value);
-            }}
-          />
-        </div>
-        <div className="inputGp">
-          <label>Post:</label>
-          <textarea
-            placeholder="Post..."
-            onChange={(event) => {
-              setPostText(event.target.value);
-            }}
-          />
-        </div>
+    <Container>
+      <Card.Body>
+        <div className="createPostPage">
+          <div className="cpContainer">
+            <h1>Create A Post</h1>
+            <div className="inputGp">
+              <label>Topic:</label>
+              <input
+                placeholder="What's pissing you off..."
+                onChange={(event) => {
+                  setTitle(event.target.value);
+                }}
+              />
+            </div>
+            <Form>
+              <Form.Group className="inputGp">
+                <Form.Label>Post:</Form.Label>
+                <textarea
+                  placeholder="Explain..."
+                  onChange={(event) => {
+                    setPostText(event.target.value);
+                  }}
+                />
+              </Form.Group>
+            </Form>
 
-        <button className="submitPost" onClick={createPost}>
-          Submit Post
-        </button>
-      </div>
-    </div>
+            <Button className="submitPost" onClick={createPost}>
+              Submit Post
+            </Button>
+          </div>
+        </div>
+      </Card.Body>
+    </Container>
   );
 }

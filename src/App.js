@@ -7,7 +7,9 @@ import CreatePost from "./CreatePost";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase";
-import { Helmet } from "react-helmet";
+import Helmet from "./Helmet";
+import { Nav, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -21,12 +23,8 @@ function App() {
   };
   return (
     <Router>
-      <Helmet>
-        <meta content="width=device-width, initial-scale=1.0" charSet="utf-8" />
-        <title>Vent</title>
-        <link rel="canonical" href="http://mysite.com/example" />
-      </Helmet>
-      <nav>
+      <Helmet />
+      <Nav>
         <Link to="/">Home</Link>
 
         {!isAuth ? (
@@ -34,10 +32,10 @@ function App() {
         ) : (
           <>
             <Link to="/createpost">Post vent</Link>
-            <button onClick={signUserOut}>Log Out</button>
+            <Button onClick={signUserOut}>Log Out</Button>
           </>
         )}
-      </nav>
+      </Nav>
       <Routes>
         <Route path="/" element={<Home isAuth={isAuth} auth={auth} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
