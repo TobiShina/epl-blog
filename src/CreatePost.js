@@ -23,7 +23,7 @@ export default function CreatePost({ isAuth }) {
     if (!isAuth) {
       navigate("/login");
     }
-  }, [isAuth, navigate]);
+  }, []);
   return (
     <Container>
       <Card.Body>
