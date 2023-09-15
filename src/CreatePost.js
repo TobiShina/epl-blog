@@ -16,7 +16,7 @@ export default function CreatePost({ isAuth }) {
       postText,
       author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
     });
-    navigate("/");
+    window.location.pathname = "/";
   };
 
   useEffect(() => {

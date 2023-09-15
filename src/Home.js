@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
-import { db } from "./firebase";
+import { db, auth } from "./firebase";
 import { Container, Button } from "react-bootstrap";
 
-export default function Home({ isAuth, auth }) {
+export default function Home({ isAuth }) {
   const [postLists, setPostLists] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
