@@ -7,9 +7,9 @@ import CreatePost from "./CreatePost";
 import { useState } from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase";
-import Helmet from "./Helmet";
 import { Nav, Button, Navbar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -23,7 +23,20 @@ function App() {
   };
   return (
     <Router>
-      <Helmet />
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta
+          name="description"
+          content="An app that allows users across the world post life challenges and struggles. Serves as a medium to vent out personal frustration."
+        />
+        <title>Vent App</title>
+
+        <link
+          rel="canonical"
+          content=" initial-scale=1.0"
+          href="http://blog-753af.web.app"
+        />
+      </Helmet>
       <Nav>
         <Navbar>
           <Link to="/">VentApp</Link>
